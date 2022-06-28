@@ -55,8 +55,10 @@ public class RomanToInteger {
 
     @Test
     void name() {
+        assertThat(1).isEqualTo(romanToInt("I"));
         assertThat(3).isEqualTo(romanToInt("III"));
         assertThat(58).isEqualTo(romanToInt("LVIII"));
         assertThat(1994).isEqualTo(romanToInt("MCMXCIV"));
+        assertThat(3999).isEqualTo(romanToInt("MMMCMXCIX"));
     }
 }
