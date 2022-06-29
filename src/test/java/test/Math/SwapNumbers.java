@@ -10,7 +10,7 @@ public class SwapNumbers {
         System.out.println(a + " " + b);
     }
 
-    void binarySwap(int a, int b) {
+    void bitSwap(int a, int b) {
         a = a ^ b;
         b = b ^ a;
         a = b ^ a;
@@ -20,6 +20,10 @@ public class SwapNumbers {
     @Test
     void name() {
         swap(1, 2);
-        binarySwap(1, 2);
+    }
+
+    @Test
+    void name2() {
+        bitSwap(1, 2);
     }
 }
