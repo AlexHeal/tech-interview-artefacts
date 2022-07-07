@@ -1,3 +1,5 @@
+package test.Java;
+
 public class Singleton {
     private static final Singleton instance = new Singleton();
 

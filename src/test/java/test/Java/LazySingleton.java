@@ -1,3 +1,5 @@
+package test.Java;
+
 public class LazySingleton {
     private static LazySingleton instance;
 
@@ -13,6 +15,6 @@ public class LazySingleton {
     }
 
     public void print() {
-        System.out.println("This is Lazy Singleton print method");
+        System.out.println("This is Lazy test.Java.Singleton print method");
     }
 }
