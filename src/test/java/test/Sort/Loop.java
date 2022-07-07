@@ -16,7 +16,7 @@ public class Loop {
             }
         }
 
-        return arr;
+        return null;
     }
 
     @Test
@@ -24,6 +24,6 @@ public class Loop {
         int[] arr = {4, 5, 3, 2, 1, 4, 4, 5};
         int[] expected = {1, 2, 3, 4, 4, 4, 5, 5};
 
-        assertThat(expected).isEqualTo(loopSort(arr));
+        assertThat(loopSort(arr)).isEqualTo(expected);
     }
 }
