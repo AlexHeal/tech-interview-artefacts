@@ -1,10 +1,12 @@
 package test.Strings;
 
 
-
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class Anagram {
     /*
@@ -14,22 +16,24 @@ public class Anagram {
     подаём на вход: {"qwe","wqe","qwe","a","a"};
     вывод на консоль: a = 3, 4 eqw = 0, 1
      */
-    public void stringAlg(String[] src) {
-        Map<String, List<Integer>> found = new HashMap<>();
+    public void containsAnagrams(String[] src) {
+        HashMap<String, List<Integer>> found = new HashMap<>();
 
         for (int i = 0; i < src.length; i++) {
             String sorted = arrSort(src[i]);
 
-            if(found.containsKey(sorted)) {
+            if (found.containsKey(sorted)) {
                 List<Integer> temp = new ArrayList<>(found.get(sorted));
                 temp.add(i);
                 found.put(sorted, temp);
             } else {
-                found.putIfAbsent(sorted, new ArrayList<>(List.of(i)));
+                found.put(sorted, new ArrayList<>(List.of(i)));
             }
         }
 
-        found.forEach( (s, l) -> {if (l.size() > 1) System.out.println(s + " = " + l);});
+        found.forEach((s, l) -> {
+            if (l.size() > 1) System.out.println(s + " = " + l);
+        });
     }
 
     String arrSort(String src) {
@@ -40,8 +44,8 @@ public class Anagram {
 
     @Test
     void name() {
-        String[] arr = new String[] {"qwe","wqe","qwee","a","a"};
-        stringAlg(arr);
+        String[] arr = new String[]{"qwe", "wqe", "qwee", "a", "a"};
+        containsAnagrams(arr);
     }
 }
 
